@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <renderingStyle name="RailMap.render" depends="nautical" defaultColor="#D8F7BA" version="1">
 	
-	
 	<order>
 		<!-- line for tunnels-->
 		<switch area="false" objectType="2">
@@ -13,11 +12,14 @@
 	</order>
 	
 	
-	<polygon>
+	<point>
+		<case minzoom="9" tag="railway" value="station" icon="seamark_harbour_default" iconOrder="52"/>
+	</point>
 
+	<polygon>
 		<group>
 			<filter  minzoom="2" maxzoom="18" color="#FFCA8B" tag="landuse" value="residential"/>
-			<filter  minzoom="16" color="#b0b000" tag="building" value=""/>
+			<filter  minzoom="16" tag="building" value="" color="#b0b000"/>
 		</group>
 	</polygon>
 
@@ -58,8 +60,14 @@
 				<filter minzoom="16" strokeWidth="9" strokeWidth_0="10"/>
 			</groupFilter>
 		</group>
-
-
 	</line>
+	
+	<text>
+		<group>
+			<!-- supresse texts for harbours -->
+			<filter tag="seamark:type" value="harbour" disable="true"/>
+		</group>
+	</text>
+
 </renderingStyle>
 
