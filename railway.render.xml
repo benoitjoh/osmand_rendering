@@ -5,20 +5,22 @@
 		<!-- line for tunnels-->
 		<switch area="false" objectType="2">
 			<case tag="railway" value="" order="130" minzoom="0">
-				<apply_if additional="tunnel=yes" order="130"/>
-				<apply_if additional="construction=yes" order="130"/>
+				<apply_if additional="tunnel=yes" order="75"/>
+				<apply_if additional="construction=yes" order="129"/>
+				<apply_if additional="service=spur" order="129"/>
             </case>
 		</switch>
 	</order>
 	
 	
 	<point>
-		<case minzoom="9" tag="railway" value="station" icon="seamark_harbour_default" iconOrder="52"/>
+		<case minzoom="7" tag="railway" value="station" icon="seamark_buoy_red_can" iconOrder="52"/>
+		<case minzoom="7" tag="railway" value="halt" icon="seamark_buoy_red_can" iconOrder="52"/>
 	</point>
 
 	<polygon>
 		<group>
-			<filter  minzoom="2" maxzoom="18" color="#FFCA8B" tag="landuse" value="residential"/>
+			<filter  minzoom="5" maxzoom="18" color="#FFCA8B" tag="landuse" value="residential"/>
 			<filter  minzoom="16" tag="building" value="" color="#b0b000"/>
 		</group>
 	</polygon>
@@ -29,10 +31,10 @@
 		<group>
 			<filter tag="railway" value="rail" color="#FF0000"/>
 			<filter tag="railway" value="light_rail" color="#FF0000" />
-			<filter tag="railway" value="construction" color="#55ff55"  order="300"/>
-			<apply_if additional="tunnel=yes" color="#ffaaaa" order="300"/>
+			<filter tag="railway" value="construction" color="#55ff55"/>
+			<apply_if additional="tunnel=yes" color="#ffaaaa"/>
 
-			<apply_if additional="service=spur" color="#666666" order="20"/>
+			<apply_if additional="service=spur" color="#666666"/>
       
 			<groupFilter>
 				<filter maxzoom="1" strokeWidth="2"/>
@@ -66,6 +68,9 @@
 		<group>
 			<!-- supresse texts for harbours -->
 			<filter tag="seamark:type" value="harbour" disable="true"/>
+			
+			<!-- name of stations -->
+			<case tag="railway" value="station" textColor="#ff0000" textSize="15" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
 		</group>
 	</text>
 
