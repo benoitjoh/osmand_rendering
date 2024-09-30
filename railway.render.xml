@@ -105,7 +105,20 @@
 			<!-- name of stations -->
 			<case tag="railway" value="station" textColor="#ff0000" textSize="15" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
 			<case tag="railway" value="halt" textColor="#ff0000" textSize="12" textItalic="true" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
-		</group>		
+		</group>	
+		
+		<switch minzoom="14" textColor="#0066ff" textHaloRadius="2" textHaloColor="#fddb8f" textOrder="251">
+			<case tag="railway" value="rail"/>
+			<case tag="railway" value="narrow_gauge"/>
+			<apply textOnPath="true">
+				<case maxzoom="14" textSize="12"/>
+				<case maxzoom="15" textSize="13"/>
+				<case maxzoom="16" textSize="14"/>
+				<case maxzoom="17" textSize="16"/>
+				<case minzoom="18" textSize="18"/>
+			</apply>
+		</switch>
+
 		<group>
 			<!-- suppress texts ...  -->
 			<filter tag="highway" value="track"/>
