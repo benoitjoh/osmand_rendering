@@ -26,6 +26,10 @@
 		</group>
 		<group>
 			<!-- suppress icons ...  -->
+			<filter tag="seamark:type" value="harbour"/>
+			<filter tag="seamark:type" value="harbour_basin"/>
+			<filter tag="waterway" value="waterfall"/>
+			<filter tag="ford" value="yes"/>
 			<filter tag="seamark:type" value="beacon_cardinal"/>
 			<filter tag="seamark:type" value="beacon_isolated_danger"/>
 			<filter tag="seamark:type" value="beacon_lateral"/>
@@ -36,9 +40,16 @@
 			<filter tag="seamark:type" value="buoy_lateral"/>
 			<filter tag="seamark:type" value="buoy_safe_water"/>
 			<filter tag="seamark:type" value="buoy_special_purpose"/>
-			<filter tag="seamark:type" value="harbour"/>
-			<filter tag="waterway" value="waterfall"/>
-			<filter tag="ford" value="yes"/>
+			<filter tag="seamark:type" value="rock"/>
+			<filter tag="seamark:type" value="wreck"/>
+			<filter tag="seamark:type" value="notice"/>
+			<filter tag="seamark:type" value="mooring"/>
+			<filter tag="seamark:type" value="light_minor"/>
+			<filter tag="seamark:type" value="light_major"/>
+			<filter tag="seamark:type" value="landmark"/>
+			<filter tag="seamark:type" value="bridge"/>
+			<filter tag="seamark:type" value="anchor_berth"/>
+			<filter tag="seamark:type" value="anchorage"/>
 			<apply disable="true"/>
 		</group>
 
@@ -125,7 +136,17 @@
 			<filter tag="highway" value="path"/>
 			<filter tag="highway" value="footway"/>
 			<filter tag="seamark:type" value="harbour"/>
-			<apply  disable="true"/>
+			<filter tag="seamark:type" value="beacon_cardinal"/>
+			<filter tag="seamark:type" value="beacon_isolated_danger"/>
+			<filter tag="seamark:type" value="beacon_lateral"/>
+			<filter tag="seamark:type" value="beacon_safe_water"/>
+			<filter tag="seamark:type" value="beacon_special_purpose"/>
+			<filter tag="seamark:type" value="buoy_cardinal"/>
+			<filter tag="seamark:type" value="buoy_isolated_danger"/>
+			<filter tag="seamark:type" value="buoy_lateral"/>
+			<filter tag="seamark:type" value="buoy_safe_water"/>
+			<filter tag="seamark:type" value="buoy_special_purpose"/>
+			<apply disable="true"/>
 		</group>
 
 	</text>
