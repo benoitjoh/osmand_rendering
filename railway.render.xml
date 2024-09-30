@@ -67,10 +67,11 @@
 		<!-- Railways  -->
 		<group>
 			<filter tag="railway" value="rail" color="#FF0000"/>
-			<filter tag="railway" value="light_rail" color="#FF0000" color_0="#ffffff" pathEffect="10_5"/>
+			<filter tag="railway" value="light_rail" color="#FF0000" color_0="#ffffff" pathEffect="8_4"/>
+			<filter tag="railway" value="subway" color="#FF0000" color_0="#ffffff" pathEffect="12_6"/>
 			<filter tag="railway" value="narrow_gauge" color="#FF0000" color_0="#ffffff" pathEffect="20_10"/>
 			<filter tag="railway" value="construction" color="#55ff55"/>
-			<apply_if additional="tunnel=yes" color="#ffaaaa"/>
+			<apply_if additional="tunnel=yes" color="#ff8888"/>
 
 			<apply_if additional="service=spur" color="#666666"/>
       
