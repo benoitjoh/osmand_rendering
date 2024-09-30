@@ -4,18 +4,44 @@
 	<order>
 		<!-- line for tunnels-->
 		<switch area="false" objectType="2">
-			<case tag="railway" value="" order="130" minzoom="0">
+			<case tag="railway" value="" order="130" minzoom="4">
 				<apply_if additional="tunnel=yes" order="75"/>
 				<apply_if additional="construction=yes" order="129"/>
 				<apply_if additional="service=spur" order="129"/>
             </case>
 		</switch>
+		<switch area="false" point="true" objectType="1" order="128">
+			<case tag="railway" value="station"/>
+			<case tag="railway" value="halt"/>
+		</switch>
+
 	</order>
 	
 	
 	<point>
-		<case minzoom="7" tag="railway" value="station" icon="seamark_buoy_red_can" iconOrder="52"/>
-		<case minzoom="7" tag="railway" value="halt" icon="seamark_buoy_red_can" iconOrder="52"/>
+		<group>
+			<filter  minzoom="6" tag="railway" value="station"  iconVisibleSize="20" />
+			<filter minzoom="6" tag="railway" value="halt" iconVisibleSize="20" />
+			<apply shield="blue_round_shield" icon="railway_station" iconOrder="52" />
+		</group>
+		<group>
+			<!-- suppress icons ...  -->
+			<filter tag="seamark:type" value="beacon_cardinal"/>
+			<filter tag="seamark:type" value="beacon_isolated_danger"/>
+			<filter tag="seamark:type" value="beacon_lateral"/>
+			<filter tag="seamark:type" value="beacon_safe_water"/>
+			<filter tag="seamark:type" value="beacon_special_purpose"/>
+			<filter tag="seamark:type" value="buoy_cardinal"/>
+			<filter tag="seamark:type" value="buoy_isolated_danger"/>
+			<filter tag="seamark:type" value="buoy_lateral"/>
+			<filter tag="seamark:type" value="buoy_safe_water"/>
+			<filter tag="seamark:type" value="buoy_special_purpose"/>
+			<filter tag="seamark:type" value="harbour"/>
+			<filter tag="waterway" value="waterfall"/>
+			<filter tag="ford" value="yes"/>
+			<apply disable="true"/>
+		</group>
+
 	</point>
 
 	<polygon>
@@ -30,7 +56,8 @@
 		<!-- Railways  -->
 		<group>
 			<filter tag="railway" value="rail" color="#FF0000"/>
-			<filter tag="railway" value="light_rail" color="#FF0000" />
+			<filter tag="railway" value="light_rail" color="#FF0000" color_0="#ffffff" pathEffect="10_5"/>
+			<filter tag="railway" value="narrow_gauge" color="#FF0000" color_0="#ffffff" pathEffect="20_10"/>
 			<filter tag="railway" value="construction" color="#55ff55"/>
 			<apply_if additional="tunnel=yes" color="#ffaaaa"/>
 
@@ -62,16 +89,32 @@
 				<filter minzoom="16" strokeWidth="9" strokeWidth_0="10"/>
 			</groupFilter>
 		</group>
+		
+		<group>
+			<!-- suppress small ways...  -->
+			<filter tag="highway" value="path"/>
+			<filter tag="highway" value="track"/>
+			<filter tag="highway" value="footway"/>
+			<apply  order="-1"/>
+		</group>
+		
 	</line>
 	
 	<text>
 		<group>
-			<!-- supresse texts for harbours -->
-			<filter tag="seamark:type" value="harbour" disable="true"/>
-			
 			<!-- name of stations -->
 			<case tag="railway" value="station" textColor="#ff0000" textSize="15" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
+			<case tag="railway" value="halt" textColor="#ff0000" textSize="12" textItalic="true" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
+		</group>		
+		<group>
+			<!-- suppress texts ...  -->
+			<filter tag="highway" value="track"/>
+			<filter tag="highway" value="path"/>
+			<filter tag="highway" value="footway"/>
+			<filter tag="seamark:type" value="harbour"/>
+			<apply  disable="true"/>
 		</group>
+
 	</text>
 
 </renderingStyle>
