@@ -9,6 +9,8 @@
 				<apply_if additional="construction=yes" order="129"/>
 				<apply_if additional="service=spur" order="129"/>
             </case>
+			<case tag="railway:preserved" value="yes" order="129"/>
+			<case tag="railway" value="preserved"/>
 		</switch>
 		<switch area="false" point="true" objectType="1" order="128">
 			<case tag="railway" value="station"/>
@@ -26,6 +28,7 @@
 		</group>
 		<group>
 			<!-- suppress icons ...  -->
+			<filter tag="power" value="tower"/>
 			<filter tag="seamark:type" value="harbour"/>
 			<filter tag="seamark:type" value="harbour_basin"/>
 			<filter tag="waterway" value="waterfall"/>
@@ -71,9 +74,12 @@
 			<filter tag="railway" value="subway" color="#FF0000" color_0="#ffffff" pathEffect="12_6"/>
 			<filter tag="railway" value="narrow_gauge" color="#FF0000" color_0="#ffffff" pathEffect="20_10"/>
 			<filter tag="railway" value="construction" color="#55ff55"/>
-			<apply_if additional="tunnel=yes" color="#ff8888"/>
+			<filter tag="railway" value="proposed" color="#55ff55" color_0="#ffffff" pathEffect="8_4"/>
+			<filter tag="railway" value="disused" color="#999999" color_0="#ffffff" pathEffect="8_4"/>
+			<apply_if additional="tunnel=yes" color="#ff9933"/>
 
 			<apply_if additional="service=spur" color="#666666"/>
+			<apply_if additional="railway:preserved=yes" color="#666666" color_0="#ffffff" pathEffect="20_10"/>
       
 			<groupFilter>
 				<filter maxzoom="1" strokeWidth="2"/>
@@ -107,6 +113,7 @@
 			<filter tag="highway" value="path"/>
 			<filter tag="highway" value="track"/>
 			<filter tag="highway" value="footway"/>
+			<filter tag="power" value="line"/>
 			<apply  order="-1"/>
 		</group>
 		
