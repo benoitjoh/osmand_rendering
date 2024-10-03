@@ -138,13 +138,13 @@
 	</line>
 	
 	<text>
+		<!-- name of stations -->
 		<group>
-			<!-- name of stations -->
 			<case tag="railway" value="station" textColor="#ff0000" textSize="15" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
 			<case tag="railway" value="halt" textColor="#ff0000" textSize="12" textItalic="true" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
-
 		</group>	
 		
+		<!-- rail information on the tracks -->
 		<switch minzoom="14" textColor="#0066ff" textHaloRadius="2" textHaloColor="#fddb8f" textOrder="251">
 			<case tag="railway" value="rail"/>
 			<case tag="railway" value="light_rail"/>
@@ -164,8 +164,13 @@
 			</apply>
 		</switch>
 
+		<!-- some changes in texts -->
 		<group>
-			<!-- suppress texts ...  -->
+			<case tag="place" value="region" textColor="#ffaa00" textSize="15" textItalic="true" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
+		</group>
+		
+		<!-- suppress texts ...  -->
+		<group>
 			<filter tag="landuse" value="forest"/>
 			<filter tag="place" value="locality"/>
 			<filter tag="place" value="hamlet"/>
