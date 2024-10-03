@@ -8,6 +8,7 @@
 				<apply_if additional="tunnel=yes" order="75"/>
 				<apply_if additional="construction=yes" order="129"/>
 				<apply_if additional="service=spur" order="129"/>
+				<apply_if additional="service=yard" order="129"/> <!-- does not work... -->
             </case>
 			<case tag="railway:preserved" value="yes" order="129"/>
 			<case tag="railway" value="preserved"/>
@@ -81,11 +82,10 @@
 			<filter tag="railway" value="disused" color="#999999"/>
 			
 			<apply_if additional="service=spur" color="#666666"/>
+			<apply_if additional="service=yard" color="#666666"/>
 			<apply_if additional="railway:preserved=yes" color="#666666"/>
 			
-			<apply_if additional="tunnel=yes"  color_0="#ffffff"/>
-
-      
+     
 			<groupFilter>
 				<filter minzoom="1" strokeWidth="2">
 					<apply_if additional="tunnel=yes" pathEffect="4_3"/>
@@ -119,10 +119,10 @@
 			<groupFilter>
 				<filter minzoom="1" maxzoom="6" strokeWidth="1" strokeWidth_0="2"/>
 				<filter minzoom="7" maxzoom="8" strokeWidth="2" strokeWidth_0="3"/>
-				<filter minzoom="9" maxzoom="10" strokeWidth="3" strokeWidth_0="4"/>
-				<filter minzoom="11" maxzoom="13" strokeWidth="5" strokeWidth_0="6"/>
-				<filter minzoom="14" maxzoom="15" strokeWidth="6" strokeWidth_0="7"/>
-				<filter minzoom="16" strokeWidth="9" strokeWidth_0="10"/>
+				<filter minzoom="9" maxzoom="10" strokeWidth="2" strokeWidth_0="4"/>
+				<filter minzoom="11" maxzoom="13" strokeWidth="4" strokeWidth_0="6"/>
+				<filter minzoom="14" maxzoom="15" strokeWidth="5" strokeWidth_0="7"/>
+				<filter minzoom="16" strokeWidth="8" strokeWidth_0="10"/>
 			</groupFilter>
 		</group>
 		
@@ -142,6 +142,7 @@
 			<!-- name of stations -->
 			<case tag="railway" value="station" textColor="#ff0000" textSize="15" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
 			<case tag="railway" value="halt" textColor="#ff0000" textSize="12" textItalic="true" textOrder="24" textHaloColor="#fddb8f" textHaloRadius="3"/>
+
 		</group>	
 		
 		<switch minzoom="14" textColor="#0066ff" textHaloRadius="2" textHaloColor="#fddb8f" textOrder="251">
@@ -165,6 +166,12 @@
 
 		<group>
 			<!-- suppress texts ...  -->
+			<filter tag="landuse" value="forest"/>
+			<filter tag="place" value="locality"/>
+			<filter tag="place" value="hamlet"/>
+			<filter tag="place" value="farm"/>
+			<filter tag="place" value="isolated_dwelling"/>
+			<filter tag="leisure" value="nature_reserve"/>
 			<filter tag="highway" value="track"/>
 			<filter tag="highway" value="path"/>
 			<filter tag="highway" value="footway"/>
